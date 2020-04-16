@@ -19,7 +19,7 @@ namespace MusicGraph
 {
     public partial class Form1 : Form
     {
-
+        public FFTProvider FtfProvider;
         
 
 
@@ -60,24 +60,44 @@ namespace MusicGraph
                
         //2. 읽어온 데이타파일 담아오기 작업수행
         }
-        public void OpenFile()
+        public float[] GetSpectrumForPosition(float position, FFTProvider fftProvider)
         {
-            
+            int start = (int)(samplesCount * position);
+            fftProver.Calculate(ChannelsSamples[0], start);
+            float[] spectrum = fftProver.Get();
+            return spectrum;
+        }
+        public void FFTProvider(int samples, bool applyTimeThinning)
+        {
+
+            Samples = samples;
+            _applyTimeThinning = applyTimeThinning;
+            Frequescies = new float[Samples];
+            ValuesBuffer = new Complex[Samples];
         }
 
         private void click_Click(object sender, EventArgs e)
         {
-            
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Wav File|*.wav";
+            //opf.InitialDirectory = Environment.CurrentDirectory;
 
-            if (opf.ShowDialog() == DialogResult.OK)
+            if (opf.ShowDialog() != DialogResult.OK)
             {
+                /*
                 string fname = opf.FileName;
                 FileInfo dFile = new FileInfo(fname);
                 int bytesCount = (int)dFile.Length;
                 data = new byte[bytesCount];
-            }
-            else
+                */
                 return;
+            }
+
+            string fname = opf.FileName;
+
+            FileInfo dFile = new FileInfo(fname);
+            int bytesCount = (int)dFile.Length;
+            data = new byte[bytesCount];
             
             
 
