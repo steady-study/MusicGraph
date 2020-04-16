@@ -42,9 +42,9 @@
             // 
             this.pb.BackColor = System.Drawing.Color.Black;
             this.pb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb.Location = new System.Drawing.Point(23, 442);
+            this.pb.Location = new System.Drawing.Point(23, 374);
             this.pb.Name = "pb";
-            this.pb.Size = new System.Drawing.Size(872, 87);
+            this.pb.Size = new System.Drawing.Size(872, 155);
             this.pb.TabIndex = 0;
             this.pb.TabStop = false;
             this.pb.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_Paint);
@@ -109,7 +109,7 @@
             easyChartSeries1.MarkerType = SeeSharpTools.JY.GUI.EasyChartSeries.PointStyle.None;
             easyChartSeries1.Width = SeeSharpTools.JY.GUI.EasyChartSeries.LineWidth.Thin;
             this.easyChart3.LineSeries.Add(easyChartSeries1);
-            this.easyChart3.Location = new System.Drawing.Point(23, 161);
+            this.easyChart3.Location = new System.Drawing.Point(11, 89);
             this.easyChart3.MajorGridColor = System.Drawing.Color.Black;
             this.easyChart3.MajorGridEnabled = true;
             this.easyChart3.Margin = new System.Windows.Forms.Padding(2);

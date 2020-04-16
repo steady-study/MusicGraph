@@ -14,7 +14,7 @@ using System.Diagnostics;
 using SeeSharpTools.JY.GUI;
 using SeeSharpTools.JY.DSP.Fundamental;
 
-
+//원본작업...,,..,우선 올려놈. 여기서 push한거 어디갔는지 모르겠다.
 namespace MusicGraph
 {
     public partial class Form1 : Form
